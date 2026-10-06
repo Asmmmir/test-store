@@ -6,7 +6,7 @@ import Timer from "@/components/Timer/Timer.vue"
 import { useStore } from "@/composables/useStore"
 
 
-const { currentRate, data, error } = useStore()
+const { currentRate, data, error, isFetching } = useStore()
 
 </script>
 
@@ -15,6 +15,7 @@ const { currentRate, data, error } = useStore()
     <div class="main">
       <div class="rate">
         <span>Курс:</span>
+
         <a-input-number
             v-model:value.lazy="currentRate"
             :min="20"
@@ -26,11 +27,13 @@ const { currentRate, data, error } = useStore()
         <div v-if="error">
           Не удалось обновить данные: {{ error }}
         </div>
-        <List v-if="data" />
-        <div v-else-if="!error">Загрузка...</div>
-      </div>
 
+        <List v-if="data" />
+
+        <div v-else-if="!error && isFetching">Загрузка...</div>
+      </div>
       <Timer />
+
       <Cart/>
     </div>
   </div>

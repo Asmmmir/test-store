@@ -13,23 +13,9 @@ const { list } = useStore()
           :key="header"
           :header="header"
           :collapsible="items.length === 0 ? 'disabled' : undefined">
-         <Product
-             :products="items"
-         />
+
+         <Product :products="items"/>
       </a-collapse-panel>
     </a-collapse>
   </div>
-
 </template>
-
-<style scoped>
-
-.list {
-  flex: 0 1 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1rem ;
-  grid-area: list
-}
-</style>

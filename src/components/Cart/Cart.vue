@@ -6,8 +6,6 @@ import { formatPriceToCurrentRate } from "@/helpers/_formatPrice"
 
 
 const { cart, totalPrice, currentRate } = useStore()
-
-
 </script>
 
 <template>
@@ -20,6 +18,7 @@ const { cart, totalPrice, currentRate } = useStore()
 
     <div>
         <span>Общая стоимость: </span>
+
         <span class="cart__total" v-text="formatPriceToCurrentRate(totalPrice, currentRate)" />
     </div>
   </div>

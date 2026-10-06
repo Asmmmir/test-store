@@ -26,7 +26,6 @@ export function useGetData(data: Ref<IData> | null, names: any) {
             return grouped
         }
 
-        if (data.value.Value.Goods) {
         for (const item of data.value.Value.Goods) {
             // Находим группу
             const group = names[item[PRODUCTS_KEYS.GROUP]]
@@ -53,7 +52,6 @@ export function useGetData(data: Ref<IData> | null, names: any) {
                 quantity: item[PRODUCTS_KEYS.QUANTITY],
                 price: item[PRODUCTS_KEYS.PRICE]
             })
-        }
         }
         return grouped
     })

@@ -50,7 +50,9 @@ onBeforeUnmount(() => {
   <div class="timer">
     <div class="timer__display">
       <span>Обновление через: </span>
+
       <span class="time" v-text="currentTime" />
+
       <span>сек</span>
     </div>
 
@@ -67,7 +69,6 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
-
 .timer {
   display: flex;
   align-items: center;
